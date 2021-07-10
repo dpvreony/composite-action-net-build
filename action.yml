@@ -78,7 +78,7 @@ steps:
         dotnet outdated -o artifacts\outdated\outdated.json src
     
     - name: List vulnerable packages
-      run: dotnet list package --vulnerable
+      run: dotnet list package --vulnerable --include-transitive
       working-directory: src
 
     - name: Run Resharper Duplicate Code Finder

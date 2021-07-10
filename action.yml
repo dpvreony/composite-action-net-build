@@ -76,6 +76,10 @@ steps:
     - name: List outdated packages
       run: |
         dotnet outdated -o artifacts\outdated\outdated.json src
+    
+    - name: List vulnerable packages
+      run: dotnet list package --vulnerable
+      working-directory: src
 
     - name: Run Resharper Duplicate Code Finder
       run: |
